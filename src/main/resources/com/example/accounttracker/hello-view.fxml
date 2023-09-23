@@ -33,7 +33,7 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="200.0" layoutY="355.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="200.0" style="-fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="Register">
+      <Button layoutX="200.0" layoutY="355.0" mnemonicParsing="false" onAction="#registerButtonHandler" prefHeight="28.0" prefWidth="200.0" style="-fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="Register">
          <font>
             <Font size="15.0" />
          </font>
