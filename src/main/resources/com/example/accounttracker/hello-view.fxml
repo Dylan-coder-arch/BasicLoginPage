@@ -38,6 +38,5 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="484.0" layoutY="29.0" mnemonicParsing="false" onAction="#onLoad" text="Button" />
    </children>
 </AnchorPane>

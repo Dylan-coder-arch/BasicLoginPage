@@ -1,7 +1,9 @@
 package com.example.accounttracker;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,6 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -16,17 +19,15 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Scanner;
+import java.net.URL;
+import java.util.*;
 
 public class HelloController {
 
     public TextField txtEmail;
     public TextField txtPassword;
 
-    private final List<String> savedCredentials = new ArrayList<>();
+    public static final List<String> savedCredentials = new ArrayList<>();
 
     public void loginButtonHandler(ActionEvent e) throws FileNotFoundException {
         // Extracting user details
@@ -59,10 +60,12 @@ public class HelloController {
         stage.show();
     }
 
-    public void onLoad() {
+    @FXML
+    public void initialize() {
         File txtCredentials = new File("credentials.txt");
         System.out.println(txtCredentials.getName());
         try {
+
             Scanner myReader = new Scanner(txtCredentials);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -77,8 +80,5 @@ public class HelloController {
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         }
-
-
     }
-
 }
